@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  DRZHomeViewController.h
 //  Drizzzle
 //
 //  Created by Jatin Pandey on 10/29/16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface DRZHomeViewController : UIViewController
 
 @end
-
