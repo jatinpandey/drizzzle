@@ -21,9 +21,10 @@
     // Override point for customization after application launch.
     
     DRZHomeViewController *homeVC = [[DRZHomeViewController alloc] init];
+    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:homeVC];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
-    self.window.rootViewController = homeVC;
+    self.window.rootViewController = navVC;
     return YES;
 }
 

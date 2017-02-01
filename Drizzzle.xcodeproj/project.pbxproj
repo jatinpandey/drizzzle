@@ -19,7 +19,7 @@
 		8F2B0D121DC8763500255AE7 /* DRZServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2B0D111DC8763500255AE7 /* DRZServiceManager.m */; };
 		8F2B0D151DC8764900255AE7 /* DRZNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2B0D141DC8764900255AE7 /* DRZNetworkManager.m */; };
 		8F2B0D1C1DC884D900255AE7 /* ShotObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2B0D1B1DC884D900255AE7 /* ShotObject.m */; };
-		8F2B0D1F1DC8865E00255AE7 /* DRZShotsCollectionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2B0D1E1DC8865E00255AE7 /* DRZShotsCollectionObject.m */; };
+		8F2B0D211DC9D14A00255AE7 /* PostDetailStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F2B0D201DC9D14900255AE7 /* PostDetailStory.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,8 +58,7 @@
 		8F2B0D141DC8764900255AE7 /* DRZNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRZNetworkManager.m; sourceTree = "<group>"; };
 		8F2B0D1A1DC884D900255AE7 /* ShotObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShotObject.h; sourceTree = "<group>"; };
 		8F2B0D1B1DC884D900255AE7 /* ShotObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShotObject.m; sourceTree = "<group>"; };
-		8F2B0D1D1DC8865E00255AE7 /* DRZShotsCollectionObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRZShotsCollectionObject.h; sourceTree = "<group>"; };
-		8F2B0D1E1DC8865E00255AE7 /* DRZShotsCollectionObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRZShotsCollectionObject.m; sourceTree = "<group>"; };
+		8F2B0D201DC9D14900255AE7 /* PostDetailStory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PostDetailStory.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +111,7 @@
 		8F0F7DEF1DC51C2B004C8D20 /* Drizzzle */ = {
 			isa = PBXGroup;
 			children = (
+				8F2B0D201DC9D14900255AE7 /* PostDetailStory.storyboard */,
 				8F2B0D191DC884B600255AE7 /* Models */,
 				8F0F7DF31DC51C2B004C8D20 /* AppDelegate.h */,
 				8F0F7DF41DC51C2B004C8D20 /* AppDelegate.m */,
@@ -187,8 +187,6 @@
 			children = (
 				8F2B0D1A1DC884D900255AE7 /* ShotObject.h */,
 				8F2B0D1B1DC884D900255AE7 /* ShotObject.m */,
-				8F2B0D1D1DC8865E00255AE7 /* DRZShotsCollectionObject.h */,
-				8F2B0D1E1DC8865E00255AE7 /* DRZShotsCollectionObject.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -288,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F0F7E001DC51C2B004C8D20 /* LaunchScreen.storyboard in Resources */,
+				8F2B0D211DC9D14A00255AE7 /* PostDetailStory.storyboard in Resources */,
 				8F0F7DFD1DC51C2B004C8D20 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,7 +361,6 @@
 				8F2B0D151DC8764900255AE7 /* DRZNetworkManager.m in Sources */,
 				8F0F7DF21DC51C2B004C8D20 /* main.m in Sources */,
 				8F0F7E1A1DC57C83004C8D20 /* DRZPostCollectionViewCell.m in Sources */,
-				8F2B0D1F1DC8865E00255AE7 /* DRZShotsCollectionObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

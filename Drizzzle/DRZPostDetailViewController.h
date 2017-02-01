@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#import "ShotObject.h"
+
 @interface DRZPostDetailViewController : UIViewController
 
-- (instancetype)initWithShotID:(NSInteger)shotID;
+@property (nonatomic) ShotObject *currentShot;
 
 @end

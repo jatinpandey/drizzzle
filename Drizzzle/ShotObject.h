@@ -17,9 +17,9 @@
 
 @interface ShotObject : JSONModel
 
-@property (nonatomic, assign) NSInteger id;
+@property (nonatomic, assign) NSInteger shotId;
 @property (nonatomic) NSString *title;
-@property (nonatomic) NSString <Optional> *description;
+@property (nonatomic) NSString <Optional> *shotDescription;
 @property (nonatomic) NSDictionary *images;
 
 @end

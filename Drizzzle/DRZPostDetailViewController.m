@@ -8,18 +8,44 @@
 
 #import "DRZPostDetailViewController.h"
 
-@interface DRZPostDetailViewController ()
+#import <SDWebImage/UIImageView+WebCache.h>
 
-@property (nonatomic) NSInteger shotID;
-@property (nonatomic) UILabel *idLabel;
+@interface DRZPostDetailViewController () <UITableViewDelegate, UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UIImageView *shotImageView;
+@property (weak, nonatomic) IBOutlet UILabel *shotDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UITableView *commentsTableView;
 
 @end
 
 @implementation DRZPostDetailViewController
 
-- (instancetype)initWithShotID:(NSInteger)shotID {
+- (void)viewWillAppear:(BOOL)animated
+{
+    NSLog(@"%s", __FUNCTION__);
+    
+}
+- (void)viewDidAppear:(BOOL)animated
+{
+    NSLog(@"%s", __FUNCTION__);
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{    NSLog(@"%s", __FUNCTION__);
+    
+    
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    NSLog(@"%s", __FUNCTION__);
+    
+}
+
+- (instancetype)initWithShot:(ShotObject *)shot {
     if (self = [super init]) {
-        _shotID = shotID;
+        _currentShot = shot;
     }
     return self;
 }
@@ -27,26 +53,48 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSLog(@"%s", __FUNCTION__);
+
+    [self.view setBackgroundColor:[UIColor whiteColor]];
     
-    self.idLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-    self.idLabel.text = [NSString stringWithFormat:@"%ld", self.shotID];
-    self.idLabel.textColor = [UIColor whiteColor];
-    [self.view addSubview:self.idLabel];
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
+    
+    NSDictionary *imageDict = [self.currentShot images];
+    NSString *normalURL = [imageDict objectForKey:@"normal"];
+    NSURL *imageURL = [NSURL URLWithString:normalURL];
+
+    [self.shotImageView sd_setImageWithURL:imageURL];
+    NSString * htmlString = [self.currentShot shotDescription];
+    NSAttributedString * htmlAttributedString = [[NSAttributedString alloc] initWithData:[htmlString dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
+    
+    self.shotDescriptionLabel.attributedText = htmlAttributedString;
+    self.shotDescriptionLabel.font = [UIFont systemFontOfSize:16];
+
+    self.commentsTableView.delegate = self;
+    self.commentsTableView.dataSource = self;
+    
+    self.commentsTableView.estimatedRowHeight = 80.0f;
+    self.commentsTableView.rowHeight = UITableViewAutomaticDimension;
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 3;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [self.commentsTableView dequeueReusableCellWithIdentifier:@"commentCell"];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"commentCell"];
+    }
+    return cell;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

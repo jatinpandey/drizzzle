@@ -10,4 +10,14 @@
 
 @implementation ShotObject
 
++ (JSONKeyMapper *)keyMapper
+{
+    return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+                                                                  @"shotId": @"id",
+                                                                  @"title": @"title",
+                                                                  @"shotDescription": @"description",
+                                                                  @"images": @"images"
+                                                                  }];
+}
+
 @end
